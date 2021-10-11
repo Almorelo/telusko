@@ -9,4 +9,9 @@ services:
     ports:
       - "8066:8066"
 
+networks:
+  default:
+    external:
+      name: nginxproxymanager_default
+
 
