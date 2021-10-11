@@ -5,9 +5,13 @@ services:
     build: .  # Buildujeme current folder
     command: python manage.py runserver 0.0.0.0:8066    # Je jedno jaký port
     volumes:
-      - .:/app
+      - web_data:/mojedata/
     ports:
       - "8066:8066"
+    container_name: telusko
+
+volumes:
+  web_data:
 
 networks:
   default:
