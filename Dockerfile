@@ -1,11 +1,7 @@
-FROM python:3.8
-
-WORKDIR /app
-
-COPY requirements.txt requirements.txt
-
-RUN pip3 install -r requirements.txt
-
-# Z kmenové složky do workdir
-COPY . .
-
+FROM python:3.6
+ENV PYTHONUNBUFFERED 1
+RUN mkdir /code
+WORKDIR /code
+COPY requirements.txt /code/
+RUN pip install --upgrade pip && pip install -r requirements.txt
+COPY . /code/
