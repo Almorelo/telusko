@@ -77,7 +77,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django-app-db',
-        'USERNAME': 'root',                 # Možná se u nové verze dává jen USER
+        'USER': 'root',
         'PASSWORD': '',
         'HOST': 'db',
         'PORT': '3306',
