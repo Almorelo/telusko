@@ -10,6 +10,14 @@ services:
       - "8066:8066"
     container_name: telusko
 
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: 'django-app-db'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+    volumes:
+      - .data/mysql/dbb:/var/lib/mysql
+
 volumes:
   web_data:
 
