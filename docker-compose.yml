@@ -3,11 +3,11 @@ version: '3'
 services:
   web:
     build: .  # Buildujeme current folder
-    command: python manage.py runserver 0.0.0.0:8067    # Je úplně jedno jaký port
+    command: python manage.py runserver 0.0.0.0:8066    # Je úplně jedno jaký port
     volumes:
       - web_data:/mojedata/
     ports:
-      - "8067:8067"
+      - "8066:8066"
     container_name: telusko
 
 volumes:
