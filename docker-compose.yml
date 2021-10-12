@@ -9,6 +9,8 @@ services:
     ports:
       - "8066:8066"
     container_name: telusko
+    depends_on:
+      - db
 
   db:
     image: mysql:5.7
