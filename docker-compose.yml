@@ -7,10 +7,11 @@ services:
     ports:
       - 8020:8020
     image: app:django
-    container_name: django_container
+    container_name: django-web
     command: python manage.py runserver 0.0.0.0:8020
     depends_on:
-      - db 
+      - db
+
   db:
     image: mysql:5.7
     environment:
@@ -18,5 +19,6 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
     volumes:
       - ./data/mysql/db:/var/lib/mysql
+    container_name: django-db
 
 
