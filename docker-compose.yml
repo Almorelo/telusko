@@ -8,11 +8,14 @@ services:
       - 8040:8040
     image: app:django
     container_name: djangoweb
-    command: python manage.py runserver 0.0.0.0:8040
+    command:
+      - '/bin/sh'
+      - '-c'
+      - '/bin/sleep 30'
+      - 'python manage.py runserver 0.0.0.0:8040'
+#    command: python manage.py runserver 0.0.0.0:8040
     depends_on:
       - djangodb
-    healthcheck:
-      timeout: 40s
 
   djangodb:
     image: mysql:5.7
