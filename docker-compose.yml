@@ -26,4 +26,7 @@ services:
       - '3307'
     container_name: djangodb
 
-
+networks:
+  default:
+    external:
+      name: nginxproxymanager_default
