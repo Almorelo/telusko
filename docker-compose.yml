@@ -5,21 +5,21 @@ services:
     volumes:
       - .:/django
     ports:
-      - 8030:8030
+      - 8040:8040
     image: app:django
-    container_name: djangoweb
-    command: python manage.py runserver 0.0.0.0:8030
+    container_name: django_web
+    command: python manage.py runserver 0.0.0.0:8040
     depends_on:
-      - postgres
-  postgres:
-     image: postgres
-     volumes:
-       - ./data/db:/var/lib/postgresql/data
-     environment:
-       - POSTGRES_DB=postgres
-       - POSTGRES_USER=postgres
-       - POSTGRES_PASSWORD=postgres
-     container_name: postgres
-
+      - djangodb
+  djangodb:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: 'djangoappdb'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+    volumes:
+      - ./data/mysql/db:/var/lib/mysql
+    ports:
+      - 33066:33066
+    container_name: django_db
 
 
