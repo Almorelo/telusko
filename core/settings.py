@@ -26,7 +26,7 @@ SECRET_KEY = 't^!+3uz%cbs$xu!qpe=6&%h^#$ydrps5=r8u_qwe!lsp4-c74e'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*', 'web2.almor.xyz']
-
+# neco
 
 # Application definition
 
