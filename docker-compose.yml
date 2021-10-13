@@ -7,7 +7,7 @@ services:
     ports:
       - 8040:8040
     image: app:django
-    container_name: django_web
+    container_name: djangoweb
     command: python manage.py runserver 0.0.0.0:8040
     depends_on:
       - djangodb
@@ -19,7 +19,7 @@ services:
     volumes:
       - ./data/mysql/db:/var/lib/mysql
     ports:
-      - 3307:3307
+      - 3306:3306
     container_name: djangodb
 
 
