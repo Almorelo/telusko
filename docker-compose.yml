@@ -14,12 +14,12 @@ services:
   djangodb:
     image: mysql:5.7
     environment:
-      MYSQL_DATABASE: 'djangoappdb'
+      MYSQL_DATABASE: 'djangodb'
       MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
     volumes:
       - ./data/mysql/db:/var/lib/mysql
     ports:
-      - 33066:3306
-    container_name: django_db
+      - 3307:3307
+    container_name: djangodb
 
 
