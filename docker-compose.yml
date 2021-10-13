@@ -11,6 +11,11 @@ services:
     command: python manage.py runserver 0.0.0.0:8040
     depends_on:
       - djangodb
+    healthcheck:
+      test: [ "CMD", "djangodb" ,"ping", "-h", "localhost" ]
+      timeout: 20s
+      retries: 10
+
   djangodb:
     image: mysql:5.7
     environment:
