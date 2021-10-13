@@ -90,7 +90,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'djangodb',
-        'PORT': '33066:33066',
+        'PORT': '33066:3306',
     }
 }
 

@@ -19,7 +19,7 @@ services:
     volumes:
       - ./data/mysql/db:/var/lib/mysql
     ports:
-      - 33066:33066
+      - 33066:3306
     container_name: django_db
 
 
