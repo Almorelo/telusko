@@ -2,10 +2,10 @@ version: "3.8"
 services:
   app:
     build: .
-    volumes:
-      - djangoweb:/django
 #    volumes:
-#      - .:/django
+#      - djangoweb:/django
+    volumes:
+      - .:/django
     ports:
       - 8040:8040
     image: app:django
@@ -14,8 +14,8 @@ services:
 #    depends_on:
 #      - djangodb
 
-volumes:
-  djangoweb:
+#volumes:
+#  djangoweb:
 
 #  djangodb:
 #    image: mysql:5.7
