@@ -10,8 +10,8 @@ services:
     container_name: djangoweb
     command: python manage.py runserver 0.0.0.0:8030
     depends_on:
-      - postgresdb
-  postgresdb:
+      - postgres
+  postgres:
      image: postgres
      volumes:
        - ./data/db:/var/lib/postgresql/data
@@ -19,7 +19,7 @@ services:
        - POSTGRES_DB=postgres
        - POSTGRES_USER=postgres
        - POSTGRES_PASSWORD=postgres
-     container_name: postgresdb
+     container_name: postgres
 
 
 
