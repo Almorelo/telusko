@@ -7,7 +7,7 @@ services:
     ports:
       - 8030:8030
     image: app:django
-    container_name: django_container
+    container_name: djangoweb
     command: python manage.py runserver 0.0.0.0:8030
     depends_on:
       - db 
@@ -19,7 +19,7 @@ services:
        - POSTGRES_DB=postgres
        - POSTGRES_USER=postgres
        - POSTGRES_PASSWORD=postgres
-     container_name: postgres_db
+     container_name: postgresdb
 
 
 
